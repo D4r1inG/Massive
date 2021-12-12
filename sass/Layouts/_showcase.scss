@@ -1,0 +1,123 @@
+.showcase {
+    padding-top: $pd-2;
+    .heading {
+        margin-bottom: $mg-2;
+    }
+    .showcase__control {
+        text-align: center;
+
+        button {
+            margin: 0 $mg-5 + 5;
+            letter-spacing: $lts-0 - 2;
+            color: $color-gray-3;
+            font-size: $fs-0;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            transition: all 0.3s;
+            &.mixitup-control-active {
+                color: $color-black-0;
+            }
+            &:hover {
+                color: $color-black-0;
+            }
+        }
+    }
+
+    .showcase__container {
+        margin-top: $mg-1;
+        .showcase__content {
+            position: relative;
+            a {
+                text-decoration: none;
+                color: $color-black-0;
+            }
+            &:hover {
+                .showcase__item {
+                    opacity: 1;
+
+                    .showcase__icon {
+                        opacity: 1;
+                        top: 40%;
+                        margin-top: -$mg-6;
+                    }
+                    .showcase__des {
+                        opacity: 1;
+                        bottom: 45%;
+                        margin-bottom: -$mg-8;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                display: block;
+            }
+            .showcase__item {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: all 0.3s;
+                border: 20px solid $color-black-7;
+                background-color: $color-white-2;
+                opacity: 0;
+
+                .showcase__icon {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    transform: translateY(45%);
+                    transition: all 0.3s;
+                    text-align: center;
+                    transition: all 0.3s;
+                    opacity: 0;
+                    cursor: pointer;
+                    i {
+                        font-size: $fs-3 + 5;
+                    }
+                }
+                .showcase__des {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-black-0;
+                    transition: all 0.3s;
+                    transform: translateY(-55%);
+                    opacity: 0;
+
+                    h4 {
+                        margin-bottom: $mg-0 + 3;
+                        letter-spacing: $lts-0 - 1;
+                        font-size: $fs-0;
+                    }
+                    p {
+                        margin: 0;
+                        a {
+                            color: $color-gray-4;
+                            letter-spacing: $lts-0 - 2;
+                            font-size: $fs-0 - 2;
+                            text-decoration: none;
+                            transition: all 0.3s;
+                            line-height: $lh-0 + 5;
+                            &:hover {
+                                color: $color-yellow-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include responsive("ipad"){
+        padding-top: $pd-9;
+        .showcase__control {
+            button{
+                line-height: $lh-2 - 5;
+            }
+        }
+    }
+}

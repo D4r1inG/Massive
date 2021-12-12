@@ -1,0 +1,105 @@
+.tab {
+    padding: $pd-2 0;
+    background: url("../img/tab-bg.png");
+    @extend %backgroundImg;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    .nav-tabs {
+        .nav-item {
+            & + .nav-item {
+                margin-left: $mg-2;
+            }
+            .nav-link {
+                position: relative;
+                transition: all 0.3s ease;
+                background: $color-gray-7;
+                color: $color-black-9;
+                border-radius: 0;
+                display: block;
+                padding: $pd-3 + 5 $pd-7;
+                border: none;
+                &.active {
+                    color: $color-black-0;
+                    background-color: $color-white-0;
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                &:hover {
+                    color: $color-black-0;
+                    background-color: $color-white-0;
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0;
+                    height: 0;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                    border-width: 10px;
+                    border-style: solid;
+                    border-color: $color-white-0 transparent transparent transparent;
+                }
+                i {
+                    font-size: $fs-4;
+                }
+            }
+        }
+    }
+    #myTabContent{
+        .tab__content{
+            line-height: $lh-0 + 5;
+            padding: $pd-3 0;
+            .tab__header{
+                margin-bottom: $mg-1;
+                p{
+                    @include styletext($fs-0, $fw-3, $color-gray-2);
+                    margin: 0;
+                    letter-spacing: $lts-0 - 3;
+                }
+                h2{
+                    letter-spacing: $lts-0 - 3;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    @include responsive("laptop"){
+        padding: $pd-9 0;
+        .nav{
+            flex-wrap: nowrap;
+        }
+
+    }
+
+    @include responsive("large"){
+        .nav{
+            flex-wrap: wrap;
+        }
+        .nav-tabs{
+            .nav-item{
+                & + .nav-item {
+                    margin-left: 0;
+                }
+                width: 100%;
+                margin-bottom: $mg-5;
+                .nav-link{
+                    text-align: center;
+                }
+            }
+        }
+        #myTabContent{
+            .tab__content{
+                h2{
+                    font-size: $fs-2;
+                }
+            }
+        }
+    }
+}

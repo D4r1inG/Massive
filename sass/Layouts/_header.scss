@@ -1,0 +1,122 @@
+header {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: inline-block;
+    width: 100%;
+    &.headerFixed {
+        max-Height: 60px;
+        position: fixed;
+        top: 0;
+        z-Index: 999;
+        background-color: $color-black-10;
+        .navbar {
+            .navbar-brand {
+                height: 60px;
+            }
+        }
+    }
+    .navbar {
+        padding: 0 $pd-1 + 3;
+        .navbar-toggler {
+            padding: 0;
+            &:focus {
+                outline: none;
+            }
+            i {
+                color: $color-white-0;
+                font-size: $fs-2;
+            }
+        }
+        .navbar-brand {
+            padding: 0;
+            transition: height 0.3s, line-height 0.3s, margin 0.3s;
+            height: 100px;
+            img {
+                height: 96px;
+                width: auto;
+                padding: $pd-0 0;
+                max-height: 100%;
+            }
+        }
+        .navbar-nav {
+            .nav-item {
+                margin-left: $mg-0;
+                &.active {
+                    .nav-link {
+                        color: $color-yellow-0;
+                    }
+                }
+                .nav-link {
+                    @include styletext($fs-0 - 1, $fw-0, $color-white-0);
+                    padding: 0 $pd-1;
+                    text-transform: uppercase;
+                    transition: height 0.3s, line-height 0.3s, margin 0.3s;
+                    letter-spacing: 0.5px;
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+
+                    .indicator {
+                        margin-left: $mg-0 + 1;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive("large") {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        width: 100vw;
+        background-color: $color-black-10;
+        // box-shadow: 0 2px 2px rgba(255, 255, 255, 0.3);
+        &.headerFixed {
+            .navbar {
+                .navbar-brand {
+                    height: 50px;
+                }
+            }
+        }
+        .navbar {
+            padding: 0;
+            .navbar-brand {
+                height: 50px;
+            }
+            .navbar-nav {
+                background-color: $color-white-0;
+                
+                .nav-item {
+                    margin-left: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    .nav-link {
+                        padding: $pd-1 $pd-4;
+                        line-height: $lh-0 - 5;
+                        width: 100%;
+                        border-bottom: solid 1px $color-gray-15;
+                        color: $color-black-1;
+                        position: relative;
+                        .indicator {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 60px;
+                            height: 45px;
+                            text-align: center;
+                            border-left: solid 1px $color-gray-11;
+                            font-size: $fs-2 + 2;
+                            line-height: $lh-2 - 2;
+                        }
+                    }
+                }
+                .nav-divide {
+                    display: none;
+                }
+            }
+        }
+    }
+}

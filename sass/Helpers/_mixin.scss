@@ -1,0 +1,15 @@
+@mixin styletext($fs,$fw,$color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+
+}
+
+@mixin responsive($screen) {
+    @if map-has-key($map: $breakPoints, $key: $screen) {
+        $value: map-get($map: $breakPoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.intro {
+    background-image: url("../img/index-banner-2.jpg");
+    @extend %backgroundImg;
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+    .intro__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        .intro__item {
+            text-align: center;
+
+            h1 {
+                @include styletext($fs-1, $fw-1, $color-white-0);
+                letter-spacing: $lts-0;
+                margin-bottom: 0;
+            }
+            h3 {
+                @include styletext($fs-2, $fw-3, $color-white-0);
+                letter-spacing: $lts-0 + 1;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @include responsive("ipad") {
+        .intro__content {
+            .intro__item {
+                h1 {
+                    font-size: $fs-3;
+                }
+                h3{
+                    font-size: $fs-2 - 2;
+                }
+            }
+        }
+    }
+}

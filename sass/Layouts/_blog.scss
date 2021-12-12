@@ -1,0 +1,93 @@
+.blog {
+    padding: $pd-2 0;
+    .heading {
+        margin-bottom: $mg-1;
+    }
+    .blog__img {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: block;
+            background-color: $color-black-6;
+            padding: $pd-1 - 2;
+            margin: 0;
+            color: $color-white-0;
+        }
+    }
+    .blog__content {
+        padding: $pd-3 0;
+        .blog__des {
+            list-style: none;
+            display: flex;
+            margin-bottom: $mg-5;
+            li {
+                margin-right: $mg-5;
+                a {
+                    @include styletext($fs-0 - 2, $fw-0, $color-gray-5);
+                    letter-spacing: $lts-0 - 4;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+                }
+            }
+        }
+        h4 {
+            margin-bottom: $mg-5;
+            letter-spacing: $lts-0 - 4;
+            a {
+                color: $color-black-0;
+                text-decoration: none;
+                transition: all 0.3s;
+                &:hover {
+                    color: $color-yellow-0;
+                }
+            }
+        }
+        .blog__date {
+            @include styletext($fs-0 - 2, $fw-0, $color-gray-5);
+            margin-bottom: $mg-2 + 5;
+            letter-spacing: $lts-0 - 3;
+            .blog__author {
+                color: $color-gray-5;
+                text-decoration: none;
+                transition: all 0.3s;
+                &:hover {
+                    color: $color-yellow-0;
+                }
+                &::after {
+                    content: "|";
+                    padding: 0 $pd-0 + 3 0 $pd-1 - 2;
+                }
+            }
+        }
+        .blog__text {
+            color: $color-gray-2;
+            margin-bottom: $mg-3;
+            line-height: $lh-0 + 5;
+        }
+        .blog__readMore {
+            text-decoration: none;
+            color: $color-gray-6;
+            transition: all 0.3s;
+            letter-spacing: $lts-0 - 4;
+            &:hover {
+                color: $color-black-0;
+            }
+
+            i {
+                margin-left: $mg-5;
+            }
+        }
+    }
+    @include responsive("laptop") {
+        padding: $pd-9 0;
+    }
+}

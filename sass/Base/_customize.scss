@@ -1,0 +1,86 @@
+.pad-30 {
+    padding-left: $pd-3;
+    padding-right: $pd-3;
+}
+.bg-black{
+    background-color: $color-black-10;
+}
+
+.showcase__container {
+    .showcase__slider {
+        margin: 0;
+        .slick-dots {
+            position: absolute;
+            z-index: 10;
+            right: 15px;
+            bottom: 15px;
+            width: unset;
+            text-align: center;
+            li {
+                margin: 0 $mg-0 + 1;
+                width: 10px;
+                height: 10px;
+                transition: all 0.3s;
+                border: 1px solid $color-white-0;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: $color-white-0;
+                    border-radius: 50%;
+                }
+                &.slick-active {
+                    background-color: $color-white-0;
+                    border-radius: 50%;
+                }
+                button {
+                    width: 0;
+                    height: 0;
+                    padding: 0;
+                    &::before {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}
+
+.feedback,
+.client {
+    .slick-dots {
+        bottom: -35px;
+        li {
+            width: 12px;
+            height: 12px;
+            background-color: $color-gray-12;
+            border-radius: 50%;
+            margin: 0 $mg-0 + 5;
+            opacity: 0.5;
+
+            &.slick-active {
+                opacity: 1;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            button {
+                width: 0px;
+                height: 0px;
+                padding: 0;
+                &::before {
+                    content: "";
+                    height: 0px;
+                    width: 0px;
+                }
+            }
+        }
+    }
+}
+
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
