@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: $fs-0 + 1;
+    font-weight: $fw-0;
+    color: $color-balck-5;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 $mg-3 0;
+    color: $color-black-1;
+    font-weight: $fw-3;
+    line-height: 1.5;
+}
+h1{
+    font-size: $fs-3 + 6;
+}
+h2{
+    font-size: $fs-3;
+}
+
+h3{
+    font-size: $fs-2 + 4;
+}
+
+h4{
+    font-size: $fs-2 - 2;
+}
+
+h5{
+    font-size: $fs-0;
+}
+
+h1, h2, h3, h4, h5{
+    letter-spacing: $lts-0 - 3;
+}

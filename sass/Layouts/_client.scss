@@ -1,0 +1,12 @@
+.client{
+    padding: $pd-2 0;
+    .client__img{
+        margin: $mg-2;
+        img{
+            width: 100%;
+        }
+    }
+    @include responsive("laptop"){
+        padding: $pd-9 0;
+    }
+}

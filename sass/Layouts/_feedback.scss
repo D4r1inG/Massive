@@ -1,0 +1,39 @@
+.feedback {
+    padding: $pd-2 0;
+    .feedback__slider {
+        max-width: 720px;
+        margin: $mg-2 auto;
+        .feedback__content {
+            text-align: center;
+            .feedback__img {
+                width: 100px;
+                margin: 0 auto $mg-2;
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                }
+            }
+            .feedback__text {
+                p {
+                    @include styletext($fs-0 + 2, $fw-3, $color-gray-2);
+                    font-style: italic;
+                    line-height: $lh-0 + 5;
+                    margin-bottom: $mg-3;
+                }
+                .feedback__author {
+                    margin-top: $mg-5;
+                    letter-spacing: $lts-0 - 3;
+                    text-transform: uppercase;
+                    @include styletext($fs-0, $fw-3, $color-black-0);
+                    span {
+                        display: block;
+                        @include styletext($fs-0 - 2, $fw-0, $color-gray-8);
+                    }
+                }
+            }
+        }
+    }
+    @include responsive("laptop"){
+        padding: $pd-9 0;
+    }
+}

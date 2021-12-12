@@ -1,0 +1,123 @@
+.skill {
+    background-image: url("../img/4.jpg");
+    @extend %backgroundImg;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    position: relative;
+    padding: $pd-2 0;
+    &.skillAnimate {
+        .progress__item {
+            .progress-bar {
+                animation: progress 1.5s ease-in-out forwards;
+            }
+        }
+    }
+    .skill__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        display: block;
+        background-color: $color-black-6;
+    }
+    .skill__left {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        h3 {
+            color: $color-white-0;
+            letter-spacing: $lts-0 + 1;
+            margin: 0;
+        }
+    }
+    .skill__right {
+        padding: 0 $pd-3;
+        h4 {
+            color: $color-white-0;
+        }
+        p {
+            margin-bottom: $mg-3;
+            color: $color-white-0;
+            line-height: $lh-0 + 5;
+        }
+        .skill__progress {
+            padding-top: $pd-3;
+            .progress__item {
+                height: 20px;
+                margin-top: $mg-5;
+                margin-bottom: $mg-1;
+                letter-spacing: $lts-0 - 4;
+                text-transform: uppercase;
+                border-radius: 0;
+                box-shadow: none;
+                font-weight: 400;
+                background-color: $color-gray-1;
+                overflow: visible;
+
+                .progress-bar {
+                    color: $color-black-0;
+                    background-color: $color-white-0;
+                    text-align: left;
+                    font-size: $fs-0 - 4;
+                    padding-left: $pd-1 - 2;
+                    position: relative;
+                    overflow: visible;
+                    span {
+                        position: absolute;
+                        top: -28px;
+                        right: -5px;
+                        display: block;
+                        min-width: 25px;
+                        height: 20px;
+                        padding: 0 8px;
+                        text-align: center;
+                        letter-spacing: 0;
+                        border-radius: 30px;
+                        background-color: $color-gray-0;
+                        color: $color-black-0;
+                        line-height: $lh-0 - 5;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            bottom: -2px;
+                            left: 15px;
+                            display: block;
+                            width: 5px;
+                            height: 5px;
+                            transform: rotate(45deg);
+                            border: 1px solid $color-gray-0;
+                            background-color: $color-gray-0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include responsive("ipad") {
+        padding: $pd-9 0;
+
+        .skill__overlay {
+            display: none;
+        }
+        .skill__left {
+            height: 400px;
+            padding-bottom: $pd-3;
+            h3 {
+                font-size: $fs-2 - 2;
+            }
+        }
+    }
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

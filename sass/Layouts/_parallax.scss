@@ -1,0 +1,24 @@
+.parallax{
+    padding: $pd-6 0;
+    background: url("../img/8.jpg");
+    @extend %backgroundImg;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    p{
+        @include styletext($fs-0 + 2, $fw-0, $color-yellow-0);
+        letter-spacing: $lts-0 - 2;
+    }
+    h1{
+        color: $color-white-0;
+    }
+    @include responsive("ipad"){
+        p{
+            margin: 0;
+        }
+        h1{
+            font-size: $fs-3 - 4;
+            margin-bottom: $mg-1;
+        }
+    }
+}

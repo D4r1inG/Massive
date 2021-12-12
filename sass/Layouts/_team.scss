@@ -1,0 +1,155 @@
+.team {
+    padding: $pd-2 0;
+    .team__content {
+        .team__img {
+            position: relative;
+            &:hover {
+                .team__hover {
+                    opacity: 1;
+
+                    .team__des {
+                        transform: translateY(-55%);
+                        opacity: 1;
+                        top: 35%;
+                    }
+                    .team__social {
+                        transform: translateY(45%);
+                        opacity: 1;
+                        bottom: 10%;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+            .team__detail {
+                position: absolute;
+                right: 0;
+                bottom: 30px;
+                width: 70%;
+                padding: $pd-1 - 2 $pd-4;
+                text-align: right;
+                background-color: $color-black-8;
+                h5 {
+                    margin: 0;
+                    letter-spacing: $lts-0 - 3;
+                    color: $color-white-0;
+                    text-transform: uppercase;
+                }
+                span {
+                    @include styletext($fs-0 - 2, $fw-3, $color-white-3);
+                    text-transform: uppercase;
+                    letter-spacing: $lts-0 - 3;
+                }
+            }
+            .team__hover {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: 0;
+                transition: all 0.3s;
+                opacity: 0;
+                border: 20px solid $color-black-7;
+                background-color: $color-white-2;
+                .team__des {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    padding: 0 $pd-4;
+                    transition: all 0.3s 0.2s;
+                    transform: translateY(0);
+                    color: $color-black-0;
+                    text-align: center;
+                    opacity: 0;
+                    h4 {
+                        margin-bottom: $mg-2 + 5;
+                        letter-spacing: $lts-0 - 1;
+                        text-transform: uppercase;
+                        font-size: $fs-0;
+                    }
+                    p {
+                        margin-bottom: 0;
+                        color: $color-gray-2;
+                        font-size: $pd-1 + 2;
+                        line-height: 30px;
+                    }
+                }
+                .team__social {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    transition: all 0.3s 0.2s;
+                    transform: translateY(0);
+                    text-align: center;
+                    opacity: 0;
+                    a {
+                        font-size: $fs-0 + 2;
+                        color: $color-black-0;
+                        margin: 0 $mg-5;
+                    }
+                }
+            }
+        }
+        .team__hiring {
+            background-color: $color-gray-11;
+            margin-top: $mg-7;
+            padding: $pd-5;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            align-items: center;
+            .team__info {
+                h4 {
+                    margin: 0;
+                    letter-spacing: $lts-0 - 4;
+                    span {
+                        color: $color-yellow-0;
+                    }
+                }
+                p {
+                    display: block;
+                    margin: $mg-5 0 0;
+                    color: $color-gray-2;
+                }
+            }
+        }
+    }
+    @include responsive("laptop") {
+        padding: $pd-9 0;
+        .team__content {
+            .team__hiring {
+                .team__info {
+                   max-width: 630px;
+                }
+            }
+        }
+    } 
+
+    @include responsive("large") {
+        .team__content {
+            .team__hiring {
+                .team__info {
+                   max-width: 410px;
+                }
+            }
+        }
+    } 
+
+    @include responsive("ipad") {
+        .team__content {
+            .team__hiring {
+                .team__info {
+                   width: 100%;
+                }
+                .button{
+                    margin-top: $mg-2;
+                }
+            }
+        }
+    }
+}

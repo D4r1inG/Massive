@@ -1,0 +1,21 @@
+.backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s;
+    text-align: center;
+    color: $color-white-0;
+    background: $color-black-6;
+    line-height: $lh-2 - 5;
+    opacity: 0;
+    &:hover {
+        color: $color-balck-5;
+        background: $color-yellow-0;
+    }
+    &.cd-top--is-visible{
+        opacity: 1;
+        bottom: 20px;
+    }
+}

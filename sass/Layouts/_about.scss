@@ -1,0 +1,51 @@
+.about {
+    padding: $pd-2 0;
+    .heading{
+        margin-bottom: $mg-4;
+    }
+    .about__item {
+        position: relative;
+        padding: $pd-3;
+        border: 1px solid $color-gray-10;
+        border-radius: 4px;
+        &:hover{
+            .about__icon{
+                background-color: $color-yellow-0;
+            }
+        }
+        .about__icon {
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            border-radius: 4px;
+            background-color: $color-black-0;
+            box-shadow: 0 0 0 10px $color-white-0;
+            line-height: $lh-1;
+            transition: all .3s;
+            i {
+                color: $color-white-0;
+                font-size: $fs-3;
+                line-height: $lh-1;
+            }
+        }
+        .about__header {
+            margin-top: $mg-3;
+            h4 {
+                margin-bottom: $mg-2;
+                letter-spacing: $lts-0 - 4;
+            }
+        }
+        .about__text {
+            color: $color-gray-2;
+        }
+    }
+    @include responsive("ipad"){
+        padding: $pd-9 0;
+        .about__item{
+            margin-bottom: $mg-1;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.heading {
+    text-align: center;
+    .heading__header {
+        position: relative;
+        margin-bottom: $mg-2;
+        padding-bottom: $pd-1 - 2;
+        letter-spacing: $lts-0 - 3;
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: -2px;
+            left: 50%;
+            width: 60px;
+            height: 2px;
+            transform: translateX(-50%);
+            background: $color-gray-9;
+        }
+    }
+    .heading__text {
+        display: inline-block;
+        width: 60%;
+        margin: 0 auto $mg-1;
+        color: $color-gray-2;
+        line-height: $lh-0;
+
+    }
+    @include responsive("ipad"){
+        .heading__header{
+            font-size: $fs-2 - 2;
+        }
+        .heading__text{
+            width: 80%;
+        }
+    }
+}
